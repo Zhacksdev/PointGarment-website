@@ -7,6 +7,13 @@ import { CATEGORIES, PRODUCTS, type Category } from "../asset/ProductData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+const WA_PHONE = "6285648102433";
+
+function buildWaLink(message: string) {
+  const text = encodeURIComponent(message);
+  return `https://wa.me/${WA_PHONE}?text=${text}`;
+}
+
 export default function ProductList() {
   const [active, setActive] = useState<Category>("Polo");
 
@@ -19,7 +26,6 @@ export default function ProductList() {
     <section className="bg-white w-full mb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14">
         {/* Tabs */}
-        {/* Tabs */}
         <div className="flex justify-center">
           <div className="w-full max-w-4xl">
             <div className="flex flex-wrap justify-center gap-2">
@@ -31,9 +37,7 @@ export default function ProductList() {
                     type="button"
                     onClick={() => setActive(cat)}
                     className={[
-                      // ukuran mobile diperkecil
                       "px-3 py-1.5 text-xs",
-                      // desktop normal
                       "sm:px-4 sm:py-2 sm:text-sm",
                       "rounded-full font-semibold transition",
                       isActive
@@ -57,20 +61,16 @@ export default function ProductList() {
             </div>
           ) : (
             <>
-              {/* ✅ MOBILE: SWIPER */}
+              {/* MOBILE: SWIPER */}
               <div className="md:hidden">
-                <Swiper
-                  spaceBetween={14}
-                  slidesPerView={1.25}
-                  centeredSlides={false}
-                >
+                <Swiper spaceBetween={14} slidesPerView={1.25}>
                   {filtered.map((p) => (
                     <SwiperSlide key={p.id}>
                       <ProductCard
                         id={p.id}
                         name={p.name}
                         variant={p.variant}
-                        href={p.href}
+                        category={p.category}
                         image={p.image}
                       />
                     </SwiperSlide>
@@ -78,7 +78,7 @@ export default function ProductList() {
                 </Swiper>
               </div>
 
-              {/* ✅ DESKTOP: GRID */}
+              {/* DESKTOP: GRID */}
               <div className="hidden md:grid grid-cols-4 gap-6">
                 {filtered.map((p) => (
                   <ProductCard
@@ -86,7 +86,7 @@ export default function ProductList() {
                     id={p.id}
                     name={p.name}
                     variant={p.variant}
-                    href={p.href}
+                    category={p.category}
                     image={p.image}
                   />
                 ))}
@@ -99,16 +99,19 @@ export default function ProductList() {
   );
 }
 
-/** --- Card terpisah biar rapi (tanpa any) --- */
+/** Card Props (tanpa any) */
 type CardProps = {
   id: string;
   name: string;
   variant: string;
-  href?: string;
+  category: Category;
   image: Parameters<typeof Image>[0]["src"];
 };
 
-function ProductCard({ name, variant, href, image }: CardProps) {
+function ProductCard({ name, variant, category, image }: CardProps) {
+  const waMessage = `Halo Point Garment, saya mau pesan ${name} (${variant}) kategori ${category}. Bisa minta katalog & harga?`;
+  const waLink = buildWaLink(waMessage);
+
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
       <div className="relative bg-gray-50">
@@ -131,7 +134,9 @@ function ProductCard({ name, variant, href, image }: CardProps) {
           </div>
 
           <a
-            href={href ?? "#"}
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center justify-center rounded-md bg-orange-500 px-3 py-2 text-white text-xs font-semibold hover:bg-orange-600 transition"
           >
             Pesan

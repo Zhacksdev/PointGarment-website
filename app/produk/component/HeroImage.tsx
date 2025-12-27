@@ -20,7 +20,7 @@ export default function HeroImage() {
           </div>
 
           <h1 className="text-4xl md:text-7xl font-bold leading-tight">
-            Profile
+            Produk
           </h1>
         </div>
       </div>

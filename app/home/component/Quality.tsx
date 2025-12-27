@@ -42,7 +42,7 @@ export default function Quality() {
             Bukti Kepercayaan dan Kualitas Point Garment
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-zinc-600 leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-zinc-600 leading-relaxed text-justify">
             Setiap proyek yang berhasil kami selesaikan—mulai dari ribuan
             seragam perusahaan hingga koleksi fashion eksklusif—adalah cerminan
             dari komitmen kami pada integritas, kualitas, dan ketepatan waktu.
