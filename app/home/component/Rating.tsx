@@ -8,19 +8,19 @@ import ratingLogo from "../asset/RatingLogo.webp";
 
 const reviews = [
   {
-    name: "Dono",
-    company: "PT. Antah Berantah",
-    text: "Setiap proyek yang berhasil kami selesaikan—mulai dari ribuan seragam perusahaan hingga koleksi fashion eksklusif.",
+    name: "Dwinda Meifrianti",
+    company: "Customer Point Garment",
+    text: "Rekomendasi nihh , cocok untuk semua yang mau bikin baju kamu tambah keren dan bagus , dengan sablon yang berkualitas , pelayanan ramah dan di jamin tidak akan nyesel order dehh.",
   },
   {
-    name: "Dono",
-    company: "PT. Antah Berantah",
-    text: "Point Garment memberikan hasil produksi yang rapi, bahan berkualitas, dan pengiriman tepat waktu. Sangat direkomendasikan.",
+    name: "Rendra Putra",
+    company: "Customer Point Garment",
+    text: "konveksinya mantap ini. workshop besar. penjahit dan tukang sablon lengkap. harga joooossss. wes pendeke nek konveksi tangan pertama yo point garment iki. suiiiiippp.",
   },
   {
-    name: "Dono",
-    company: "PT. Antah Berantah",
-    text: "Pelayanan profesional, komunikasi jelas, dan hasil akhir sesuai ekspektasi. Kami puas bekerja sama dengan Point Garment.",
+    name: "Irnela Purnama Arsih",
+    company: "Customer Point Garment",
+    text: "Pelayanan profesional, komunikasi jelas, dan hasil akhir sesuai ekspektasi. Kami puas bekerja sama dengan Point Garment. Sidoarjo jadi lebih berwarna dengan seragam baru kami!",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function Rating() {
                   </div>
 
                   {/* TEXT */}
-                  <p className="text-sm text-zinc-600 leading-relaxed mb-6 grow">
+                  <p className="text-sm text-zinc-600 leading-relaxed mb-6 grow text-justify">
                     {review.text}
                   </p>
 

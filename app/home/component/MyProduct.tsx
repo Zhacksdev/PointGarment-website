@@ -17,8 +17,8 @@ type Product = {
 };
 
 const products: Product[] = [
+   { name: "Kaos", image: kaosImg, category: "Kaos" },
   { name: "Jaket", image: jaketImg, category: "Jaket" },
-  { name: "Kaos", image: kaosImg, category: "Kaos" },
   { name: "Polo Shirt", image: poloImg, category: "Polo" },
 ];
 
