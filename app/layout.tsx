@@ -17,7 +17,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const SHOULD_LOAD_GTM = Boolean(GTM_ID);
-const SHOULD_LOAD_GA = Boolean(GA_MEASUREMENT_ID) && !SHOULD_LOAD_GTM;
+const SHOULD_LOAD_GA = Boolean(GA_MEASUREMENT_ID);
 
 export const metadata: Metadata = {
   title: {
@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       {SHOULD_LOAD_GTM && <GoogleTagManager gtmId={GTM_ID!} />}
-      {!SHOULD_LOAD_GTM && SHOULD_LOAD_GA && (
+      {SHOULD_LOAD_GA && (
         <GoogleAnalytics gaId={GA_MEASUREMENT_ID!} />
       )}
 
