@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/6282228211989?text=Halo%2C%20saya%20mau%20tanya%20tentang%20produk%20ACP"
+      href="https://wa.me/6285648102433?text=Halo%20Point%20Garment,%20saya%20ingin%20menghubungi%20Anda."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hubungi via WhatsApp"
