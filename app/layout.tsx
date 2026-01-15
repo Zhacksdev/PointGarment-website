@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import WhatsAppToggle from "@/component/WhatsAppToggle";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,6 +12,12 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
+
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+const SHOULD_LOAD_GTM = Boolean(GTM_ID);
+const SHOULD_LOAD_GA = Boolean(GA_MEASUREMENT_ID) && !SHOULD_LOAD_GTM;
 
 export const metadata: Metadata = {
   title: {
@@ -39,9 +46,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 
@@ -58,6 +65,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
+      {SHOULD_LOAD_GTM && <GoogleTagManager gtmId={GTM_ID!} />}
+      {!SHOULD_LOAD_GTM && SHOULD_LOAD_GA && (
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID!} />
+      )}
+
       <body className={`${poppins.className} ${poppins.variable} antialiased`}>
         <Navbar />
         {/* Tambahkan role="main" untuk aksesibilitas dan SEO */}
