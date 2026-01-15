@@ -12,7 +12,7 @@ export default function Quality() {
           <div className="relative w-full max-w-sm sm:max-w-md aspect-3/4 overflow-hidden rounded-xl shadow-lg">
             <Image
               src={qualityImage}
-              alt="Produksi di workshop Point Garment"
+              alt="Workshop konveksi murah Sidoarjo Point Garment pusat produksi seragam dan kaos"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 400px"
@@ -26,7 +26,7 @@ export default function Quality() {
               25+
             </div>
             <div className="text-xs sm:text-sm text-zinc-800 leading-tight">
-              Projek yang <br className="hidden sm:block" />
+              Projek konveksi <br className="hidden sm:block" />
               terselesaikan
             </div>
           </div>
@@ -35,17 +35,15 @@ export default function Quality() {
         {/* RIGHT: CONTENT */}
         <div className="text-center md:text-left md:pl-6">
           <span className="text-orange-400 text-sm font-medium">
-            Berkualitas
+            Jasa Konveksi Sidoarjo
           </span>
 
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900">
-            Bukti Kepercayaan dan Kualitas Point Garment
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 leading-tight">
+            Konveksi Murah Sidoarjo dengan Kualitas Point Garment
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-zinc-600 leading-relaxed text-justify">
-            Setiap proyek yang berhasil kami selesaikan—mulai dari ribuan
-            seragam perusahaan hingga koleksi fashion eksklusif—adalah cerminan
-            dari komitmen kami pada integritas, kualitas, dan ketepatan waktu.
+            Point Garment hadir sebagai solusi bagi Anda yang mencari konveksi murah Sidoarjo namun tetap mengutamakan mutu. Sebagai vendor seragam Sidoarjo yang berpengalaman, kami telah menyelesaikan berbagai proyek mulai dari konveksi kaos Sidoarjo untuk komunitas hingga seragam perusahaan skala besar. Setiap produk yang keluar dari workshop kami adalah bukti komitmen pada integritas dan ketepatan waktu.
           </p>
 
           <div className="mt-6 flex justify-center md:justify-start">
@@ -53,7 +51,7 @@ export default function Quality() {
               href="/produk"
               className="inline-flex items-center justify-center bg-orange-400 text-white px-5 py-2.5 rounded-md shadow hover:bg-orange-500 transition"
             >
-              Produk Kami
+              Cek Produk Kami
             </Link>
           </div>
         </div>

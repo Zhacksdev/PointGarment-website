@@ -1,39 +1,48 @@
 import type { Metadata } from "next";
-
 import Rating from "../home/component/Rating";
 import HeroImage from "./component/HeroImage";
 import ProfileMe from "./component/ProfileMe";
 import CompanyProfile from "./component/CompanyProfile";
 
 export const metadata: Metadata = {
-  title: "Konveksi Murah Sidoarjo Surabaya",
+  title: "Point Garment Sidoarjo | Pusat Konveksi & Vendor Seragam Terpercaya",
   description:
-    "Point Garmentadalah jasa konveksi dan produksi pakaian profesional untuk seragam, fashion, dan kebutuhan industri.",
-  alternates: { canonical: "/" },
+    "Point Garment Sidoarjo adalah jasa konveksi profesional sejak 2018. Kami melayani produksi seragam kantor, kaos komunitas, sablon, dan bordir berkualitas di Sidoarjo.",
+  alternates: { canonical: "https://pointgarment.com/profile" }, 
   openGraph: {
-    title: "Konveksi Murah Sidoarjo Surabaya | Point Garment",
+    title: "Profil Point Garment Sidoarjo - Jasa Konveksi & Sablon",
     description:
-      "Jasa konveksi dan garment profesional untuk seragam, fashion, dan kebutuhan industri.",
-    url: "/",
+      "Kenali lebih dekat Point Garment Sidoarjo. Vendor konveksi tangan pertama dengan fasilitas workshop lengkap untuk kebutuhan seragam dan fashion Anda.",
+    url: "https://pointgarment.com/profile",
     type: "website",
     locale: "id_ID",
-    siteName: "Point Garment",
+    siteName: "Point Garment Sidoarjo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Konveksi Murah Sidoarjo Surabaya | Point Garment",
+    title: "Point Garment Sidoarjo | Konveksi Murah & Berkualitas",
     description:
-      "Jasa konveksi dan garment profesional untuk seragam, fashion, dan kebutuhan industri.",
+      "Jasa produksi pakaian profesional untuk seragam dan industri di Sidoarjo.",
   },
 };
 
-export default function HomePage() {
+export default function ProfilePage() {
   return (
-    <>
+    <main>
+      {/* Hidden H1 untuk memperkuat struktur SEO tanpa merusak desain */}
+      <h1 className="sr-only">Profil Bisnis Point Garment Sidoarjo - Konveksi & Sablon</h1>
+      
       <HeroImage />
-      <ProfileMe/>
-      <CompanyProfile youtubeUrl="https://youtu.be/KH6znSSvfvE?si=qZEjUmbNUE3_vC9r" />
-      <Rating />
-    </>
+      
+      <section id="profil-point-garment">
+        <ProfileMe />
+      </section>
+
+      <CompanyProfile youtubeUrl="KH6znSSvfvE" />
+      
+      <section id="ulasan-pelanggan-sidoarjo">
+        <Rating />
+      </section>
+    </main>
   );
 }
