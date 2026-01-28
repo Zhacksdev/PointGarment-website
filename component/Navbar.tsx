@@ -80,6 +80,13 @@ export default function Navbar() {
             >
               Produk Kami
             </Link>
+            <Link
+              href="/blog"
+              aria-current={isActive("/blog") ? "page" : undefined}
+              className={getLinkClass("/blog")}
+            >
+              Blog
+            </Link>
           </nav>
 
           {/* Right actions (desktop) */}

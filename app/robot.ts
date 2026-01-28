@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,18 +6,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+
         disallow: [
-          "/api/",       // Jangan indeks route API
-          "/admin/",     // Jika ada halaman admin/dashboard
-          "/private/",   // Folder privat lainnya
+          "/api/",            // Next API routes
+          "/_next/",          // internal Next.js
+          "/admin/",          // kalau ada panel internal
+          "/private/",        // folder privat
         ],
       },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-      },
     ],
-    // Ganti dengan domain asli Point Garment kamu
+
     sitemap: "https://pointgarment.com/sitemap.xml",
   };
 }
